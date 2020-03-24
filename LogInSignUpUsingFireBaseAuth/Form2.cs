@@ -82,7 +82,8 @@ namespace LogInSignUpUsingFireBaseAuth
 
              //this path to set data to user.
             // EX : USERS -- > *FullName* --> *ALL Data About User*.
-            SetResponse response = firebase.Set(@"Users/" + user.Email, user);
+
+            SetResponse response = firebase.Set(@"Users/" + tbFName.Text, user);
 
             MessageBox.Show("Sign Up Successfully", "Done");
                 Home home = new Home();

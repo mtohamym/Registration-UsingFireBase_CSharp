@@ -35,7 +35,7 @@ namespace LogInSignUpUsingFireBaseAuth
         private void Button1_Click(object sender, EventArgs e)
         {
             #region Conditions to Check Text Boxes Not Null 
-            if (String.IsNullOrEmpty(tbEmail.Text) &&
+            if (String.IsNullOrEmpty(tbUserName.Text) &&
                String.IsNullOrEmpty(tbPassword.Text))
             {
                 MessageBox.Show("Fill all data !!", "Error");
@@ -45,16 +45,16 @@ namespace LogInSignUpUsingFireBaseAuth
               
                 //this path to get data to user.
                 // EX : USERS -- > *Email* --> *ALL Data About User*.
-                FirebaseResponse response = Firebase.Get(@"Users/" + tbEmail.Text);
+                FirebaseResponse response = Firebase.Get(@"Users/" + tbUserName.Text);
                 UserModel UserFromFireBase = response.ResultAs<UserModel>();
                 String Message = "Login Successfully";
-                UserModel user = new UserModel(tbPassword.Text,tbEmail.Text);
+                UserModel user = new UserModel(tbPassword.Text,tbUserName.Text);
                 
                 if (validating(user, UserFromFireBase, Message) == true)
                 {
                     MessageBox.Show(Message, "Message");
                     WebSite webForm = new WebSite();
-                    LogedUserData userData = new LogedUserData(user);
+                   
                     webForm.ShowDialog();
                     this.Hide();
                     
@@ -72,7 +72,7 @@ namespace LogInSignUpUsingFireBaseAuth
               
                 return false;
             }
-            if (User.Email != UserFromFireBase.Email)
+            if (User.FirstName != UserFromFireBase.FirstName)
             {
                 MessageBox.Show("User Not Found");
                 return false;

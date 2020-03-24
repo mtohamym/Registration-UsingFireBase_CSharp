@@ -138,13 +138,13 @@
             this.fName.AutoSize = true;
             this.fName.BackColor = System.Drawing.Color.Transparent;
             this.fName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fName.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fName.ForeColor = System.Drawing.Color.Black;
             this.fName.Location = new System.Drawing.Point(510, 109);
             this.fName.Name = "fName";
-            this.fName.Size = new System.Drawing.Size(100, 24);
+            this.fName.Size = new System.Drawing.Size(176, 21);
             this.fName.TabIndex = 11;
-            this.fName.Text = "First Name";
+            this.fName.Text = "First Name (UserName)";
             this.fName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
